@@ -1,64 +1,63 @@
 package model;
 // REPETIR
 public class InventarioTenda {
-    public int Id;
-    public Integer IdVideoxogo;
-    public Float PrezoMayorista;
-    public Float PrezoVenta;
-    public int PorcentaxeOferta;
+    private int id;
+    private int idVideoxogo;
+    private double prezoMayorista;
+    private double prezoVenta;
+    private int porcentaxeOferta;
 
-    public InventarioTenda(Integer IdVideoxogo, Float PrezoMayorista, Float PrezoVenta, int PorcentaxeOferta) {
-        this.IdVideoxogo = IdVideoxogo;
-        this.PrezoMayorista = PrezoMayorista;
-        this.PrezoVenta = PrezoVenta;
-        this.PorcentaxeOferta = PorcentaxeOferta;
+    public InventarioTenda(int idVideoxogo, double prezoMayorista, double prezoVenta, int porcentaxeOferta) {
+        this.idVideoxogo = idVideoxogo;
+        this.prezoMayorista = prezoMayorista;
+        this.prezoVenta = prezoVenta;
+        this.porcentaxeOferta = porcentaxeOferta;
     }
-
-    public InventarioTenda(int Id, Integer IdVideoxogo, Float PrezoMayorista, Float PrezoVenta, int PorcentaxeOferta) {
-        this.Id = Id;
-        this.IdVideoxogo = IdVideoxogo;
-        this.PrezoMayorista = PrezoMayorista;
-        this.PrezoVenta = PrezoVenta;
-        this.PorcentaxeOferta = PorcentaxeOferta;
+    public InventarioTenda(int id, int idVideoxogo, double prezoMayorista, double prezoVenta, int porcentaxeOferta) {
+        this.id = id;
+        this.idVideoxogo = idVideoxogo;
+        this.prezoMayorista = prezoMayorista;
+        this.prezoVenta = prezoVenta;
+        this.porcentaxeOferta = porcentaxeOferta;
     }
 
     public int getId() {
-        return Id;
-    }
-
-    public Integer getIdVideoxogo() {
-        return IdVideoxogo;
-    }
-
-    public Float getPrezoMayorista() {
-        return PrezoMayorista;
-    }
-
-    public Float getPrezoVenta() {
-        return PrezoVenta;
-    }
-
-    public int getPorcentaxeOferta() {
-        return PorcentaxeOferta;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
-    public void setIdVideoxogo(Integer idVideoxogo) {
-        IdVideoxogo = idVideoxogo;
+    public double getPrezoMayorista() {
+        return prezoMayorista;
     }
 
-    public void setPrezoMayorista(Float prezoMayorista) {
-        PrezoMayorista = prezoMayorista;
+    public void setPrezoMayorista(double prezoMayorista) {
+        this.prezoMayorista = prezoMayorista;
     }
 
-    public void setPrezoVenta(Float prezoVenta) {
-        PrezoVenta = prezoVenta;
+    public double getPrezoVenta() {
+        return prezoVenta;
+    }
+
+    public void setPrezoVenta(double prezoVenta) {
+        this.prezoVenta = prezoVenta;
+    }
+
+    public int getPorcentaxeOferta() {
+        return porcentaxeOferta;
     }
 
     public void setPorcentaxeOferta(int porcentaxeOferta) {
-        PorcentaxeOferta = porcentaxeOferta;
+        this.porcentaxeOferta = porcentaxeOferta;
+    }
+
+    public int getIdVideoxogo() {
+        return idVideoxogo;
+    }
+
+    public void setIdVideoxogo(int idVideoxogo) {
+        this.idVideoxogo = idVideoxogo;
     }
 }
