@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 // REPETIR
 public class Videoxogo implements Serializable {
-    public static final long serialVersionUID = 1L;
+
     public int Id;
     public String Titulo;
     public String Plataforma;

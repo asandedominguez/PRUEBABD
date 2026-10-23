@@ -31,50 +31,50 @@ public class FileServices {
         }
         return videoxogos;
     }
-// REPETIR
-    public static void toXML (List<Videoxogo> videoxogoList, String ruta) {
+// PERFECTO
+    public static void toXML (List<Videoxogo> videoxogos, String ruta) {
         XMLOutputFactory fabrica = XMLOutputFactory.newInstance();
 
-        try (FileWriter f_escritura = new FileWriter(ruta) ) {
-            XMLStreamWriter escribir = fabrica.createXMLStreamWriter(f_escritura);
+        try {
+            FileWriter fichero = new FileWriter(ruta);
+            XMLStreamWriter creacion = fabrica.createXMLStreamWriter(fichero);
 
-            escribir.writeStartDocument("UTF-8", "1.0");
-            escribir.writeStartElement("Videoxogos");
-            escribir.writeCharacters("\n");
-            escribir.writeCharacters(" ");
+            creacion.writeStartDocument("UTF-8", "1.0");
+            creacion.writeStartElement("Videoxogos");
+            creacion.writeCharacters("\n");
 
-            for (Videoxogo v: videoxogoList) {
-                escribir.writeStartElement("Id");
-                escribir.writeAttribute("Id", String.valueOf(v.getId()));
-                escribir.writeCharacters("\n");
-                escribir.writeCharacters(" ");
-                escribir.writeEndElement();
+            for (Videoxogo v : videoxogos) {
+                creacion.writeStartElement("Videoxogo");
+                creacion.writeAttribute("id", String.valueOf(v.getId()));
+                creacion.writeCharacters("\n");
 
-                escribir.writeStartElement("Titulo");
-                escribir.writeCharacters(v.getTitulo() != null ? v.getTitulo() : "");
-                escribir.writeCharacters("\n");
-                escribir.writeEndElement();
+                creacion.writeStartElement("Titulo");
+                creacion.writeCharacters(v.getTitulo() != null ? v.getTitulo() : "");
+                creacion.writeCharacters("\n");
+                creacion.writeEndElement();
 
-                escribir.writeStartElement("Plataforma");
-                escribir.writeCharacters(v.getPlataforma() != null ? v.getPlataforma() : "");
-                escribir.writeCharacters("\n");
-                escribir.writeEndElement();
+                creacion.writeStartElement("Plataforma");
+                creacion.writeCharacters(v.getPlataforma() != null ? v.getPlataforma() : "");
+                creacion.writeCharacters("\n");
+                creacion.writeEndElement();
 
-                escribir.writeStartElement("AnoLanzamento");
-                escribir.writeCharacters(String.valueOf(v.getAnoLanzamento()));
-                escribir.writeCharacters("\n");
-                escribir.writeEndElement();
+                creacion.writeStartElement("AnoLanzamento");
+                creacion.writeCharacters(String.valueOf(v.getAnoLanzamento()));
+                creacion.writeCharacters("\n");
+                creacion.writeEndElement();
 
-                escribir.writeStartElement("Descripcion");
-                escribir.writeCharacters(v.getDescripcion() != null ? v.getDescripcion() : "");
-                escribir.writeCharacters("\n");
-                escribir.writeEndElement();
+                creacion.writeStartElement("Descripcion");
+                creacion.writeCharacters(v.getDescripcion() != null ? v.getDescripcion() : "");
+                creacion.writeCharacters("\n");
+                creacion.writeEndElement();
+
+                creacion.writeEndElement();
+
             }
-            escribir.writeEndElement();
-            escribir.writeEndDocument();
-            escribir.flush();
-            escribir.close();
-
+            creacion.writeEndElement();
+            creacion.writeEndDocument();
+            creacion.flush();
+            creacion.close();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
